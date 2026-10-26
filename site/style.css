@@ -1,0 +1,44 @@
+:root{color-scheme:dark;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#0d1610;color:#eef6ed;touch-action:none}
+button,input{font:inherit}
+button{cursor:pointer;border:0;border-radius:12px;padding:13px 18px;background:#dbe7d4;color:#152017;font-weight:800;letter-spacing:.02em;box-shadow:0 4px 0 rgba(0,0,0,.25)}
+button:active{transform:translateY(2px);box-shadow:0 2px 0 rgba(0,0,0,.25)}
+button.secondary{background:#34483a;color:#f4f8f2}
+#game{position:fixed;inset:0;width:100%;height:100%;display:block;background:#17251d}
+.screen{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:50;background:rgba(10,16,12,.44);backdrop-filter:blur(3px)}
+.screen.show{display:flex}
+#loading{background:#101a13}
+#loading>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 44%;transform:scale(1.05)}
+.loadingShade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,12,8,.08),rgba(7,12,8,.62))}
+.loadingCard{position:absolute;left:50%;bottom:max(7vh,40px);transform:translateX(-50%);width:min(520px,86vw);text-align:center;text-shadow:0 2px 3px #000}
+.logo{font-weight:950;letter-spacing:.18em;font-size:clamp(20px,3vw,38px);margin-bottom:10px}
+.progress{height:8px;margin-top:12px;border-radius:999px;overflow:hidden;background:rgba(255,255,255,.22)}
+#loadingBar{height:100%;width:0;background:#e8f3e4;transition:width .2s}
+.menuCard{width:min(430px,88vw);padding:28px;border-radius:24px;background:rgba(26,42,31,.94);border:1px solid rgba(255,255,255,.12);box-shadow:0 25px 70px rgba(0,0,0,.45);display:flex;flex-direction:column;gap:12px;text-align:center}
+.menuCard.compact{width:min(470px,90vw)}
+.menuCard h1,.menuCard h2{margin:0}.subtitle{margin:0 0 8px;color:#bdd0bd}.small{font-size:12px;color:#b8c5b8;margin-top:4px}.joinRow{display:flex;gap:8px}.joinRow input{min-width:0;flex:1;border:0;border-radius:12px;background:#132219;color:white;padding:13px;text-transform:uppercase;font-weight:900;letter-spacing:.15em;text-align:center}.scrollCard{max-height:80vh;overflow:auto;text-align:left}.scrollCard h2{text-align:center}
+.hidden{display:none!important}
+#hud{position:fixed;inset:0;pointer-events:none;z-index:20}
+#clock{position:absolute;top:14px;left:50%;transform:translateX(-50%);padding:7px 13px;border-radius:10px;background:rgba(13,22,16,.7);font-weight:900;font-size:14px}
+#roomBadge{position:absolute;top:52px;left:50%;transform:translateX(-50%);padding:5px 10px;border-radius:9px;background:rgba(13,22,16,.68);font-size:12px;font-weight:800;letter-spacing:.1em}
+#resourceHud{position:absolute;left:12px;top:12px;display:flex;flex-direction:column;gap:5px;background:rgba(13,22,16,.7);padding:10px 12px;border-radius:12px;font-size:13px;min-width:90px}
+#survivalHud{position:absolute;right:12px;top:12px;width:180px;background:rgba(13,22,16,.7);padding:10px 12px;border-radius:12px;font-size:10px;font-weight:900;display:grid;gap:5px}
+.bar{display:inline-block;width:90px;height:7px;background:#1b271f;border-radius:99px;overflow:hidden;margin-left:5px;vertical-align:middle}.bar i{display:block;height:100%;width:100%;background:#e5eee2}
+#pauseButton{pointer-events:auto;position:absolute;right:14px;top:136px;width:42px;height:42px;padding:0;border-radius:10px;background:rgba(13,22,16,.78);color:white}
+#message{position:absolute;left:50%;top:17%;transform:translateX(-50%);max-width:min(620px,80vw);background:rgba(13,22,16,.78);padding:8px 14px;border-radius:10px;font-size:13px;opacity:0;transition:opacity .2s;text-align:center}
+#message.show{opacity:1}
+#hotbar{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);display:flex;gap:7px;pointer-events:auto}
+.hotSlot{width:62px;height:58px;background:rgba(23,36,27,.86);border:2px solid rgba(255,255,255,.25);border-radius:11px;display:grid;place-items:center;text-align:center;font-size:10px;font-weight:800;padding:4px;user-select:none}.hotSlot.selected{border-color:#f4f5d4;box-shadow:0 0 0 2px rgba(245,246,207,.18) inset}.hotSlot .ico{font-size:21px;line-height:20px}.hotSlot .count{font-size:9px;color:#d7e4d4}
+#zoomSlider{pointer-events:auto;position:absolute;bottom:18px;right:14px;width:155px;accent-color:#e5eee2}
+.hudButton{border:0}
+.panel{position:fixed;z-index:45;left:50%;top:50%;transform:translate(-50%,-50%);width:min(650px,92vw);max-height:82vh;overflow:auto;padding:18px;border-radius:20px;background:rgba(22,35,26,.98);box-shadow:0 20px 80px rgba(0,0,0,.5)}
+.centerPanel{width:min(360px,88vw);display:flex;flex-direction:column;gap:12px}.panelHeader{display:flex;align-items:center;justify-content:space-between;gap:12px}.panelHeader h2{margin:0}.panelHeader button{width:38px;height:38px;padding:0;background:#36493b;color:white}.panelHint{font-size:12px;color:#b9c9b8;margin-top:12px}.panelActions{display:flex;justify-content:flex-end;margin-top:10px}
+#inventoryGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:9px;margin-top:12px}.invItem{padding:12px;background:#17271d;border:1px solid #3c5140;border-radius:12px;min-height:70px}.invItem.selected{outline:2px solid #f5f6ce}.invItem b{display:block}.invItem small{color:#aec0af}
+#craftList{display:grid;gap:9px;margin-top:12px}.recipe{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;background:#17271d;border-radius:12px;padding:12px}.recipe small{display:block;color:#b9c9b8;margin-top:3px}.recipe button{padding:8px 12px}.recipe button:disabled{opacity:.35;cursor:not-allowed}
+#mobileControls{position:fixed;inset:0;z-index:30;pointer-events:none}.mobile button,#mobileControls button{pointer-events:auto}
+#joystick{pointer-events:auto;position:absolute;left:20px;bottom:22px;width:150px;height:150px;border-radius:50%;background:rgba(17,31,21,.42);border:2px solid rgba(255,255,255,.2)}#stick{position:absolute;left:48px;top:48px;width:54px;height:54px;border-radius:50%;background:rgba(236,244,232,.7);box-shadow:0 4px 15px rgba(0,0,0,.25)}
+#runBtn,#useBtn,#invBtn,#craftBtn{position:absolute;width:82px;height:52px;padding:0;background:rgba(29,47,34,.84);color:#fff;border:1px solid rgba(255,255,255,.22)}#runBtn{right:22px;bottom:82px}#useBtn{right:22px;bottom:20px}#invBtn{right:112px;bottom:20px}#craftBtn{right:112px;bottom:82px}
+@media(max-width:800px){#survivalHud{width:150px;font-size:9px}.bar{width:62px}#resourceHud{font-size:11px}.hotSlot{width:52px;height:50px}#hotbar{bottom:8px;left:50%;max-width:46vw;overflow:hidden}#zoomSlider{right:15px;bottom:145px;width:132px}#pauseButton{top:125px}.menuCard{padding:22px}}
+@media(pointer:fine){#mobileControls{display:none!important}}
+@media(pointer:coarse){#hotbar{bottom:168px;max-width:56vw}#zoomSlider{bottom:226px;right:18px;width:132px}}

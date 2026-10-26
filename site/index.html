@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no" />
+  <meta name="theme-color" content="#17251d" />
+  <title>Infinite Green Hills</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="game" aria-label="Infinite Green Hills game canvas"></canvas>
+
+  <div id="loading" class="screen show">
+    <img src="loading_screen.webp" alt="Infinite Green Hills" />
+    <div class="loadingShade"></div>
+    <div class="loadingCard">
+      <div class="logo">INFINITE GREEN HILLS</div>
+      <div id="loadingText">Loading website game…</div>
+      <div class="progress"><div id="loadingBar"></div></div>
+    </div>
+  </div>
+
+  <div id="menu" class="screen">
+    <div class="menuCard">
+      <h1>Infinite Green Hills</h1>
+      <p class="subtitle">Explore • Survive • Build • Play Together</p>
+      <button data-action="solo">Solo Survival</button>
+      <button data-action="creative">Solo Creative</button>
+      <button data-action="multiplayer">Multiplayer</button>
+      <button data-action="controls">Controls</button>
+      <div class="small">Browser edition • Desktop + Mobile</div>
+    </div>
+  </div>
+
+  <div id="multiplayerMenu" class="screen">
+    <div class="menuCard compact">
+      <h2>Multiplayer</h2>
+      <button data-action="host-survival">Host Survival</button>
+      <button data-action="host-creative">Host Creative</button>
+      <div class="joinRow">
+        <input id="roomInput" maxlength="6" placeholder="ROOM CODE" autocomplete="off" />
+        <button data-action="join">Join</button>
+      </div>
+      <div id="networkStatus" class="small"></div>
+      <button class="secondary" data-action="back">Back</button>
+    </div>
+  </div>
+
+  <div id="controlsMenu" class="screen">
+    <div class="menuCard compact scrollCard">
+      <h2>Controls</h2>
+      <p><b>Desktop:</b> WASD / arrows move, Shift runs, E uses/interacts, I or Tab inventory, C crafting, Q drops/deletes selected item, mouse wheel zoom.</p>
+      <p><b>Creative:</b> select a build piece on the hotbar, then click/tap clear ground to place it. Dropping an item deletes it.</p>
+      <p><b>Mobile:</b> joystick moves, RUN sprints, USE interacts, INV opens inventory, CRAFT opens crafting, zoom slider changes view.</p>
+      <button class="secondary" data-action="back">Back</button>
+    </div>
+  </div>
+
+  <div id="hud" class="hidden">
+    <div id="clock">Day 1 • 08:00</div>
+    <div id="roomBadge" class="hidden"></div>
+    <div id="resourceHud">
+      <span>🪨 <b id="rockCount">0</b></span>
+      <span>🪵 <b id="stickCount">0</b></span>
+      <span>◆ <b id="flintCount">0</b></span>
+      <span>▧ <b id="clothCount">0</b></span>
+      <span>⬡ <b id="stoneCount">0</b></span>
+    </div>
+    <div id="survivalHud">
+      <div>HP <span class="bar"><i id="hpBar"></i></span></div>
+      <div>FOOD <span class="bar"><i id="foodBar"></i></span></div>
+      <div>WATER <span class="bar"><i id="waterBar"></i></span></div>
+      <div>STAMINA <span class="bar"><i id="staminaBar"></i></span></div>
+    </div>
+    <button id="pauseButton" class="hudButton">Ⅱ</button>
+    <div id="message"></div>
+    <div id="hotbar"></div>
+    <input id="zoomSlider" type="range" min="0.7" max="1.65" step="0.01" value="1.08" aria-label="Zoom" />
+  </div>
+
+  <div id="inventoryPanel" class="panel hidden">
+    <div class="panelHeader"><h2>Inventory</h2><button data-close-panel>×</button></div>
+    <div id="inventoryGrid"></div>
+    <div class="panelHint">Tap an item to select it. Q / Drop removes the selected item in Creative.</div>
+    <div class="panelActions"><button id="dropButton">Drop</button></div>
+  </div>
+
+  <div id="craftPanel" class="panel hidden">
+    <div class="panelHeader"><h2>Crafting</h2><button data-close-panel>×</button></div>
+    <div id="craftList"></div>
+  </div>
+
+  <div id="pausePanel" class="panel centerPanel hidden">
+    <div class="panelHeader"><h2>Paused</h2><button data-close-panel>×</button></div>
+    <button id="resumeButton">Resume</button>
+    <button id="leaveButton">Main Menu</button>
+  </div>
+
+  <div id="mobileControls" class="hidden">
+    <div id="joystick"><div id="stick"></div></div>
+    <button id="runBtn">RUN</button>
+    <button id="useBtn">USE</button>
+    <button id="invBtn">INV</button>
+    <button id="craftBtn">CRAFT</button>
+  </div>
+
+  <script type="module" src="game.js"></script>
+</body>
+</html>
